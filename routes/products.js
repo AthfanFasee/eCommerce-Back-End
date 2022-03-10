@@ -5,7 +5,7 @@ import upload from '../middleware/upload.js';
 const router = express.Router();
 
 router.get('/', getAllProducts);
-router.post('/', upload.array('image', 3), createProduct);
+router.post('/', upload.single('images'), createProduct);
 router.patch('/:id', updateProduct);
 router.patch('/like/:id', addLike);
 router.patch('/dislike/:id', removeLike);

@@ -29,14 +29,14 @@ export const getAllProducts = async (req, res) => {
    //Finding only the liked products If needed
     
 
-       console.log(products)
     res.status(StatusCodes.OK).json({products, noOfProducts});
 }
 
 //Create Product
 export const createProduct = async (req, res) => {
-    const product = await Product.create(req.body);    
-    res.status(StatusCodes.CREATED).json({product});
+    console.log(req.file)    
+    console.log(req.body)     
+    res.status(StatusCodes.CREATED).send('file received');
 }
 
 //Update Product
